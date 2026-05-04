@@ -1,0 +1,33 @@
+Project Overview
+
+Luxury Split Showcase is a premium custom section built for Shopify themes using Liquid, HTML, and CSS. This section is designed to create a luxury storytelling experience by combining sticky sidebar navigation with visually rich content blocks.
+
+The left panel remains fixed while users explore multiple featured collections, campaigns, or brand stories on the right side through smooth scrolling interactions.
+
+Features
+
+✅ Sticky sidebar navigation
+✅ Dynamic block-based content management
+✅ Merchant-friendly theme customization
+✅ Large responsive image rendering
+✅ Hover zoom animations
+✅ Smooth content browsing experience
+✅ Mobile and tablet optimized layout
+✅ Clean and scalable section architecture
+
+Technical Implementation
+Shopify section schema
+Dynamic blocks using Liquid loops
+Responsive CSS Grid layout
+Sticky positioning
+Image optimization
+Hover transitions and UI interactions
+Business Use Cases
+Luxury fashion stores
+Premium product storytelling
+Brand campaigns
+Featured collections
+Seasonal launches
+Skills Demonstrated
+
+Shopify Development • Liquid • Responsive Design • UI Architecture • Performance Optimization
