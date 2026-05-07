@@ -1,0 +1,239 @@
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+.header{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 45px;
+    background-color:white;
+    border-bottom:1px solid #e5e5e5;
+}
+
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    background-color:#6e7f80;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:20px;
+}
+
+.logo h2{
+    margin:0;
+    font-size:26px;
+    color:#2d3436;
+    font-weight:700;
+}
+
+/* Menu */
+
+.main-menu ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+    margin:0;
+    padding:0;
+}
+
+.main-menu ul li a{
+    text-decoration:none;
+    color:#2d3436;
+    font-size:15px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.main-menu ul li a:hover{
+    color:#6e7f80;
+}
+
+.right-side{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    padding:10px 40px 10px 15px;
+    border:1px solid #dcdcdc;
+    border-radius:50px;
+    outline:none;
+    font-size:14px;
+    width:220px;
+}
+
+.search-box i{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#6e7f80;
+}
+
+.cart-icon{
+    position:relative;
+    font-size:20px;
+    color:#2d3436;
+    cursor:pointer;
+}
+
+.cart-badge{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    background-color:#6e7f80;
+    color:white;
+    font-size:10px;
+    padding:3px 6px;
+    border-radius:50%;
+}
+
+/* Button */
+
+.sign-btn button{
+    background-color:#6e7f80;
+    color:white;
+    border:none;
+    padding:11px 24px;
+    border-radius:50px;
+    font-size:14px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sign-btn button:hover{
+    background-color:#556566;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+    .header{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+    }
+
+    .main-menu ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .right-side{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+
+@media(max-width:576px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo h2{
+        font-size:22px;
+    }
+
+    .logo-icon{
+        width:38px;
+        height:38px;
+        font-size:18px;
+    }
+
+    .main-menu ul{
+        gap:12px;
+    }
+
+    .main-menu ul li a{
+        font-size:14px;
+    }
+
+    .search-box input{
+        width:180px;
+        font-size:13px;
+    }
+
+    .sign-btn button{
+        padding:10px 18px;
+        font-size:13px;
+    }
+
+    .cart-icon{
+        font-size:18px;
+    }
+}
+
+</style>
+
+<div class="header">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-kitchen-set"></i>
+        </div>
+        <h2>Kitchenix</h2>
+    </div>
+
+    <div class="main-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="right-side">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search products...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge">2</span>
+        </div>
+
+        <div class="sign-btn">
+            <button>Sign In</button>
+        </div>
+
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Kitchen Header",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Kitchen Header"
+    }
+  ]
+}
+{% endschema %}

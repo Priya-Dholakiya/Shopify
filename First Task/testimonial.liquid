@@ -1,0 +1,192 @@
+<style>
+
+.testimonial-section{
+    width:100%;
+    padding:80px 40px;
+    background-color:#f5f7f7;
+}
+
+.testimonial-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.testimonial-heading h2{
+    font-size:38px;
+    color:#2d3436;
+    margin-bottom:10px;
+}
+
+.testimonial-heading p{
+    color:#6e7f80;
+    font-size:15px;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.testimonial-card{
+    background-color:white;
+    padding:35px;
+    border-radius:25px;
+    transition:0.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.testimonial-card:hover{
+    transform:translateY(-8px);
+}
+
+.stars{
+    color:#6e7f80;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.review{
+    color:#555;
+    font-size:15px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.user img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.user-info h4{
+    margin:0;
+    color:#2d3436;
+    font-size:18px;
+}
+
+.user-info span{
+    color:#6e7f80;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px){
+    .testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .testimonial-section{
+        padding:70px 30px;
+    }
+
+    .testimonial-heading h2{
+        font-size:34px;
+    }
+}
+
+@media (max-width: 768px){
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .testimonial-section{
+        padding:60px 20px;
+    }
+
+    .testimonial-heading h2{
+        font-size:30px;
+    }
+
+    .testimonial-card{
+        padding:25px;
+    }
+}
+
+</style>
+
+<div class="testimonial-section">
+
+    <div class="testimonial-heading">
+        <h2>What Our Customers Say</h2>
+        <p>Trusted by thousands of happy kitchen lovers across the country.</p>
+    </div>
+
+    <div class="testimonial-grid">
+
+        {% for block in section.blocks %}
+
+        <div class="testimonial-card">
+
+            <div class="stars">★★★★★</div>
+
+            <div class="review">
+                {{ block.settings.review_text }}
+            </div>
+
+            <div class="user">
+
+                <img src="{{ block.settings.user_image | image_url }}">
+
+                <div class="user-info">
+                    <h4>{{ block.settings.user_name }}</h4>
+                    <span>{{ block.settings.user_role }}</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Kitchen Testimonials",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "user_image",
+          "label": "User Image"
+        },
+        {
+          "type": "text",
+          "id": "user_name",
+          "label": "User Name"
+        },
+        {
+          "type": "text",
+          "id": "user_role",
+          "label": "User Role"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kitchen Testimonials"
+    }
+  ]
+}
+{% endschema %}

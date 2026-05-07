@@ -1,0 +1,204 @@
+<style>
+
+.product-section{
+    width:100%;
+    padding:80px 40px;
+    background-color:white;
+}
+
+.product-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.product-heading h2{
+    font-size:38px;
+    color:#2d3436;
+    margin-bottom:10px;
+}
+
+.product-heading p{
+    color:#6e7f80;
+    font-size:15px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.product-card{
+    background-color:#f5f7f7;
+    border-radius:25px;
+    overflow:hidden;
+    transition:0.3s;
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+.product-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+/* Product Content */
+
+.product-content{
+    padding:22px;
+}
+
+.product-content h3{
+    font-size:20px;
+    color:#2d3436;
+    margin-bottom:8px;
+}
+
+.product-content p{
+    color:#6e7f80;
+    font-size:14px;
+    margin-bottom:14px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:700;
+    color:#556566;
+    margin-bottom:18px;
+}
+
+.product-btn button{
+    width:100%;
+    background-color:#6e7f80;
+    color:white;
+    border:none;
+    padding:13px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.product-btn button:hover{
+    background-color:#556566;
+}
+
+.sale-badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background-color:#556566;
+    color:white;
+    padding:6px 14px;
+    border-radius:50px;
+    font-size:12px;
+}
+
+</style>
+
+<div class="product-section">
+
+    <div class="product-heading">
+        <h2>Featured Products</h2>
+        <p>Upgrade your kitchen with premium essentials and modern cookware.</p>
+    </div>
+
+    <div class="product-grid">
+
+        {% for product in collections.all.products limit: 4 %}
+
+        <div class="product-card">
+
+            <span class="sale-badge">New</span>
+
+            <img src="{{ product.featured_image | image_url }}">
+
+            <div class="product-content">
+
+                <h3>{{ product.title }}</h3>
+
+                <p>{{ product.description | strip_html | truncate: 60 }}</p>
+
+                <div class="price">
+                    {{ product.price | money }}
+                </div>
+
+                <div class="product-btn">
+                    <button>Add To Cart</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Kitchen Products",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Kitchen Products"
+    }
+  ]
+}
+{% endschema %}
+
+@media(max-width:992px){
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:576px){
+
+    .product-section{
+        padding:50px 20px;
+    }
+
+    .product-heading h2{
+        font-size:28px;
+    }
+
+    .product-heading p{
+        font-size:14px;
+        line-height:1.6;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .product-card img{
+        height:230px;
+    }
+
+    .product-content{
+        padding:18px;
+    }
+
+    .product-content h3{
+        font-size:18px;
+    }
+
+    .price{
+        font-size:18px;
+    }
+
+    .product-btn button{
+        padding:11px;
+        font-size:14px;
+    }
+
+}
