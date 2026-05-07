@@ -1,0 +1,111 @@
+<style>
+    .header{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:10px 30px;
+    }
+
+    .main-menu ul{
+        list-style:none;
+        display:flex;
+        gap:20px;
+    }
+
+    .main-menu ul li a{
+        text-decoration:none;
+        color:black;
+        font-weight:500;
+    }
+
+    .main-menu ul li .home-menu{
+        background-color:#faebd7;
+        color:red;
+        padding:6px 10px;
+        border-radius:50px;
+    }
+
+    input{
+        padding:5px 10px;
+        border-radius:20px;
+        border:1px solid #ccc;
+    }
+
+
+    .icons{
+        display:flex;
+        gap:10px;
+    }
+
+    .icon-box{
+        position:relative;
+        font-size:15px;
+    }
+
+    .badge{
+        position:absolute;
+        top:-8px;
+        right:-10px;
+        background:red;
+        color:white;
+        font-size:10px;
+        padding:2px 6px;
+        border-radius:50%;
+    }
+    
+    button{
+        background-color:red;
+        color:white;
+        padding:8px 17px;
+        border:2px solid red;
+        border-radius:50px;
+    }
+</style>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="header">
+    
+    <div style="font-size:25px;font-weight:700; "><span style="color:red;">Shop</span>Zone</div>
+
+    <div class="main-menu">
+        <ul>
+            <li><a class="home-menu">Home</a></li>
+            <li><a>Men</a></li>
+            <li><a>Women</a></li>
+            <li><a>Electronics</a></li>
+            <li><a>Accessories</a></li>
+            <li><a>Sale🔥</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <input type="text" placeholder="Search products...">
+    </div>
+
+    <div class="icons">
+        <div class="icon-box">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="badge">2</span>
+        </div>
+    </div>
+
+    <div>
+        <button>Sign In</button>
+    </div>
+
+</div>
+
+{%schema %}
+{
+    "name": "Custom_header",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+        {
+            "name": "Custom_Header"
+        }
+    ]
+}
+{%endschema %}

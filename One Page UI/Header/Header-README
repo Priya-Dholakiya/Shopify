@@ -1,0 +1,175 @@
+# Custom Shopify Header
+
+A modern custom Shopify header section built using Liquid, HTML, CSS, and Font Awesome icons.
+
+---
+
+# Features
+
+- Responsive header layout
+- Navigation menu
+- Active menu styling
+- Search bar
+- Cart icon with notification badge
+- Rounded Sign In button
+- Modern clean UI
+- Flexbox layout
+
+---
+
+# Technologies Used
+
+- Shopify Liquid
+- HTML5
+- CSS3
+- Font Awesome
+
+---
+
+# Installation
+
+## 1. Create Section File
+
+Create a new file inside:
+
+```bash
+sections/custom-header.liquid
+```
+
+---
+
+## 2. Paste the Code
+
+Paste the complete header code inside the file.
+
+---
+
+## 3. Add Section in Shopify
+
+Go to:
+
+```bash
+Online Store → Customize → Add Section
+```
+
+Select:
+
+```bash
+Custom Header
+```
+
+---
+
+# External Library Used
+
+## Font Awesome CDN
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+```
+
+---
+
+# Main Components
+
+## Logo
+
+```html
+<span style="color:red;">Shop</span>Zone
+```
+
+---
+
+## Navigation Menu
+
+- Home
+- Men
+- Women
+- Electronics
+- Accessories
+- Sale
+
+---
+
+## Search Bar
+
+```html
+<input type="text" placeholder="Search products...">
+```
+
+---
+
+## Cart Icon
+
+```html
+<i class="fa fa-shopping-cart"></i>
+```
+
+---
+
+## Notification Badge
+
+```html
+<span class="badge">2</span>
+```
+
+---
+
+## Sign In Button
+
+Rounded modern CTA button.
+
+---
+
+# CSS Features
+
+- Flexbox alignment
+- Rounded borders
+- Hover-ready navigation
+- Notification badge positioning
+- Responsive spacing
+
+---
+
+# Main CSS Classes
+
+| Class | Purpose |
+|---|---|
+| `.header` | Main header container |
+| `.main-menu` | Navigation menu |
+| `.icons` | Icon wrapper |
+| `.icon-box` | Cart icon container |
+| `.badge` | Notification badge |
+| `.home-menu` | Active menu item |
+
+---
+
+# Folder Structure
+
+```bash
+sections/
+   custom-header.liquid
+```
+
+---
+
+# Future Improvements
+
+- Mobile responsive navbar
+- Hamburger menu
+- Sticky header
+- Dropdown navigation
+- User profile icon
+- Wishlist functionality
+
+---
+
+# Author
+
+Priya Dholakiya
+
+---
+
+# License
+
+Open-source and free to use.

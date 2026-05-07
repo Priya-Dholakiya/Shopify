@@ -1,0 +1,119 @@
+# Shopify Announcement Bar
+
+A simple and modern Shopify announcement bar section created using Liquid, HTML, and CSS.
+
+---
+
+# Features
+
+- Full width announcement bar
+- Promotional offer text
+- Center aligned content
+- Responsive design
+- Lightweight section
+- Easy customization
+
+---
+
+# Technologies Used
+
+- Shopify Liquid
+- HTML5
+- CSS3
+
+---
+
+# Installation
+
+## 1. Create Section File
+
+Create a new file inside:
+
+```bash
+sections/announcement-bar.liquid
+```
+
+---
+
+## 2. Paste the Code
+
+Paste the complete announcement bar code inside the file.
+
+---
+
+## 3. Add Section in Shopify
+
+Go to:
+
+```bash
+Online Store → Customize → Add Section
+```
+
+Select:
+
+```bash
+Announcement Bar
+```
+
+---
+
+# Main Features
+
+## Promotional Message
+
+```html
+🚀 Free shipping on orders above ₹999 — Use code:SHOPZONE10
+```
+
+---
+
+# CSS Features
+
+- Black background
+- White text color
+- Center alignment
+- Rounded spacing
+- Modern typography
+
+---
+
+# Main CSS Properties
+
+| Property | Purpose |
+|---|---|
+| `background-color` | Background styling |
+| `text-align:center` | Center text |
+| `padding` | Inner spacing |
+| `font-size` | Text size |
+| `font-weight` | Bold text |
+
+---
+
+# Folder Structure
+
+```bash
+sections/
+   announcement-bar.liquid
+```
+
+---
+
+# Future Improvements
+
+- Dynamic announcement text
+- Auto sliding announcements
+- Close button
+- Countdown timer
+- Responsive mobile optimization
+
+---
+
+# Author
+
+Priya Dholakiya
+
+---
+
+# License
+
+Open-source and free to use.

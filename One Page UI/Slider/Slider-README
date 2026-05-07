@@ -1,0 +1,154 @@
+# Custom Shopify Slick Slider
+
+A modern custom Shopify slider section built using Liquid, HTML, CSS, JavaScript, jQuery, and Slick Slider.
+
+## Features
+
+- Dynamic image upload from Shopify customizer
+- Slick slider integration
+- Autoplay functionality
+- Navigation arrows
+- Dots indicator
+- Text overlay content
+- CTA buttons
+- Responsive design
+- Modern UI layout
+
+---
+
+# Technologies Used
+
+- Shopify Liquid
+- HTML5
+- CSS3
+- JavaScript
+- jQuery
+- Slick Slider
+
+---
+
+# Installation
+
+## 1. Create Section File
+
+Create a new file inside:
+
+```bash
+sections/custom-slider.liquid
+```
+
+---
+
+## 2. Paste the Code
+
+Paste the complete slider code inside the file.
+
+---
+
+## 3. Add Section in Theme Customizer
+
+Go to:
+
+```bash
+Online Store → Customize → Add Section
+```
+
+Select:
+
+```bash
+Custom Slider
+```
+
+---
+
+# External CDN Used
+
+## Slick Slider CSS
+
+```html
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+```
+
+---
+
+## jQuery
+
+```html
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+```
+
+---
+
+## Slick Slider JS
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+```
+
+---
+
+# Slider Settings
+
+```javascript
+$('.main-div').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true
+});
+```
+
+---
+
+# Shopify Schema
+
+The section includes:
+
+- Image Picker
+- Text Input
+
+---
+
+# Folder Structure
+
+```bash
+sections/
+   custom-slider.liquid
+```
+
+---
+
+# UI Components
+
+- Hero Banner
+- Heading
+- Description
+- Rounded Buttons
+- Slider Navigation
+- Dynamic Images
+
+---
+
+# Future Improvements
+
+- Mobile responsive optimization
+- Dynamic text settings
+- Button link support
+- Animation effects
+- Overlay background
+
+---
+
+# Author
+
+Priya Dholakiya
+
+---
+
+# License
+
+This project is open-source and free to use.
