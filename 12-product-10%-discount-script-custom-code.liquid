@@ -1,0 +1,181 @@
+
+
+{%- doc -%}
+  This block is used to display the add to cart button.
+  Intended for product-form.liquid block.
+
+  @param {string} can_add_to_cart - Whether the product can be added to the cart
+  @param {string} add_to_cart_text - The text of the add to cart button
+{%- enddoc -%}
+
+{% liquid
+  assign class = 'add-to-cart-button ' | append: block.settings.style_class
+  assign id = 'BuyButtons-ProductSubmitButton-' | append: block.id
+%}
+
+<span
+  {{ block.shopify_attributes }}
+  style="--add-to-cart-font-case: {{ settings.button_text_case }};"
+>
+  {% render 'add-to-cart-button',
+    id: id,
+    class: class,
+    can_add_to_cart: can_add_to_cart,
+    product: closest.product,
+    add_to_cart_text: add_to_cart_text,
+    data_testid: 'standalone-add-to-cart'
+  %}
+</span>
+
+<a id="whatsapp-order-btn"
+   href="#"
+   target="_blank"
+   style="
+      display:inline-block;
+      width:100%;
+      text-align:center;
+      background:#25D366;
+      color:#fff;
+      padding:14px 20px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      margin-top:10px;
+   ">
+   Order on WhatsApp
+</a>
+
+<div id="wholesale-message"
+     style="
+        margin-top:10px;
+        padding:10px;
+        border-radius:8px;
+        font-weight:bold;
+     ">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  let wholesaleBox =
+      document.getElementById("wholesale-message");
+
+  function updateWhatsappLink() {
+
+    let qtyInput =
+      document.querySelector('input[name="quantity"]');
+
+    let qty = qtyInput
+      ? parseInt(qtyInput.value)
+      : 1;
+
+    let productTitle =
+      "{{ closest.product.title }}";
+
+    let originalPrice =
+      {{ closest.product.price | divided_by: 100 }};
+
+    let discountedPrice = originalPrice;
+
+    if(qty >= 12){
+
+      discountedPrice =
+        originalPrice - (originalPrice * 10 / 100);
+
+    }
+
+    let finalTotal =
+      discountedPrice * qty;
+
+    let productUrl =
+      "{{ shop.url }}{{ closest.product.url }}";
+
+    if(qty >= 12){
+
+      wholesaleBox.innerHTML = `
+        🎉 10% Wholesale Discount Applied!<br><br>
+
+        🛍 Original Price: ₹${originalPrice}<br>
+
+        🔥 Discounted Price: ₹${discountedPrice}<br>
+
+        🔢 Quantity: ${qty}<br>
+
+        ✅ Final Total: ₹${finalTotal}
+      `;
+
+      wholesaleBox.style.background = "#d4edda";
+      wholesaleBox.style.color = "#155724";
+
+    } else {
+
+      let remaining = 12 - qty;
+
+      wholesaleBox.innerHTML = `
+        Add ${remaining} more item(s)
+        to get 10% wholesale discount.
+      `;
+
+      wholesaleBox.style.background = "#fff3cd";
+      wholesaleBox.style.color = "#856404";
+    }
+
+    let message =
+`Hi, I want to order this product
+
+🛍 Product: ${productTitle}
+
+💰 Original Price: ₹${originalPrice}
+
+🔥 Discounted Price: ₹${discountedPrice}
+
+🔢 Quantity: ${qty}
+
+✅ Final Total: ₹${finalTotal}
+
+🔗 Product Link:
+${productUrl}`;
+
+    let whatsappNumber = "919099594720";
+
+    let url =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(message);
+
+    document
+      .getElementById("whatsapp-order-btn")
+      .href = url;
+  }
+
+  setInterval(updateWhatsappLink, 500);
+
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "t:names.add_to_cart",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style_class",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:options.primary"
+        },
+        {
+          "value": "button-secondary",
+          "label": "t:options.secondary"
+        }
+      ],
+      "default": "button-secondary"
+    }
+  ]
+}
+{% endschema %}
